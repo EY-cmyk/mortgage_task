@@ -32,7 +32,7 @@ Use `cd *name of your folder with project*`
 ```javascript
 python manage.py runserver 7000
 ```
-## You must change the port to display the css file correctly
+## You must change the port to 7000 to display the css file correctly
 ---
 
 > Now You have successfully launched your local server with the Mortgage project.
