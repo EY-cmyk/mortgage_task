@@ -30,7 +30,7 @@ Use `cd *name of your folder with project*`
 
 > Fourth step is to run your local server with django project:
 ```javascript
-python manage.py runserver
+python manage.py runserver 7000
 ```
 ---
 
