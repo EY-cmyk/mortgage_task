@@ -1,0 +1,23 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block title %} Delete your Bank {% endblock %}
+<link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+
+{% block content %}
+    {% include 'main/header_add.html' %}
+
+    <div class="form">
+        <form method="post">
+            {% csrf_token %}
+            <h1>Delete your Bank</h1><br>
+            <span>{{ error }}</span>
+            <button class="btn btn-success" type="submit"> Delete Bank</button>
+            <button class="btn btn-primary"><a href="/banking">Back</a></button>
+
+        </form>
+    </div>
+    <hr>
+    {% include 'main/footer.html' %}
+{% endblock %}
+

@@ -1,0 +1,13 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block title %} Your banks{% endblock %}
+<link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+
+{% block content %}
+    {% include 'main/header.html' %}
+    <p>its your banks</p>
+
+{#    {% include 'main/footer.html' %}#}
+{% endblock %}
+

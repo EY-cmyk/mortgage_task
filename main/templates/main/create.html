@@ -1,0 +1,28 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block title %} Create your Bank {% endblock %}
+<link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+
+{% block content %}
+    {% include 'main/header.html' %}
+
+    <div class="form">
+        <form method="post">
+            {% csrf_token %}
+            <h1>Add your Bank here</h1><br>
+            {{ form.title }}<br>
+            {{ form.int_rate }}<br>
+            {{ form.max_loan }}<br>
+            {{ form.min_dep }}<br>
+            {{ form.loan_term }}<br>
+            <span>{{ error }}</span>
+            <button class="btn btn-success" type="submit"> Add Bank</button>
+        </form>
+    </div>
+    <hr>
+
+
+    {% include 'main/footer.html' %}
+{% endblock %}
+

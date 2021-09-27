@@ -1,0 +1,49 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block title %} Banking {% endblock %}
+<link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+
+{% block content %}
+    {% include 'main/header.html' %}
+
+    <div class="banking">
+        <h1>Your Banks</h1>
+        <hr>
+        <div style="width: auto;">
+            <div class="divmain">
+                {% if banks %}
+                    {% for el in banks %}
+                        <div style="background:rgb(30, 68, 130); margin: 10px; border-radius: 15px;">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title"><b>{{ el.title }}</b></h5>
+                                    <p class="card-text">Interest Rate: <b>{{ el.int_rate }}</b></p>
+                                </div>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">Loan Term: {{ el.loan_term }}</li>
+                                    <li class="list-group-item">Max Loan: {{ el.max_loan }}</li>
+                                    <li class="list-group-item">Min Dep: {{ el.min_dep }}</li>
+                                </ul>
+                                <div class="card-body">
+                                    <a href="{% url 'banks-update' el.id %}" class="card-link">
+                                        <button type="button" class="btn btn-warning">Update</button>
+                                    </a>
+                                    <a href="{% url 'banks-delete' el.id %}" class="card-link">
+                                        <button type="button" class="btn btn-danger">Delete
+                                        </button>
+                                    </a>
+
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <p id="nby">No Banks yet.<br> You can add New Bank on page "CREATE YOUR BANK</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    {% include 'main/footer.html' %}
+{% endblock %}
+

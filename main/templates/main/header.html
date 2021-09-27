@@ -1,0 +1,28 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+<style>
+
+</style>
+{% block content %}
+    <div class="navs">
+        <nav class="navbar navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/">
+                    <img src="{% static 'main/img/bank.png' %}" alt="лого" width="30" height="24"
+                         class="d-inline-block align-text-top">
+                    MORTGAGE HELPER
+                </a>
+                <div class="dv">
+                    <a class="calc" href="calculator"> MORTGAGE CALCULATOR</a>
+                </div>
+                <div class="dv">
+                    <a class="calc" href="banking"> YOUR BANKS</a>
+                </div>
+                <div class="dv">
+                    <a class="calc" href="create"> CREATE YOUR BANK</a>
+                </div>
+            </div>
+        </nav>
+    </div>
+{% endblock %}
